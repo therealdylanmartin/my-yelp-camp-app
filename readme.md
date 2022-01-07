@@ -1,0 +1,1 @@
+This is a project to follow along with my web developer bootcamp.
