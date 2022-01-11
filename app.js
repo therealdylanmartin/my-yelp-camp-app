@@ -107,7 +107,12 @@ app.use((err, req, res, next) => {
     if(!err.message) err.message = 'Something went wrong';
     res.status(statusCode).render('error', { err });
 })
+
+let port = process.env.PORT;
+if(process.env.NODE_ENV !== 'production') {
+    port = 3000;
+}
       
-app.listen(3000, () => {
-    console.log('Listening on Port 3000');
+app.listen(port, () => {
+    console.log(`Serving on Port ${port}`);
 })
