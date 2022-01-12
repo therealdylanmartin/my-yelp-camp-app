@@ -1,16 +1,14 @@
 <% layout('layouts/boilerplate') %>
 
+<div id="cluster-map" class="w-100"></div>
+
 <h1>All Campgrounds</h1>
 <div>
     <% for(let campground of campgrounds) { %>
         <div class="card mb-3">
             <div class="row">
                 <div class="col-md-4">
-                    <% campground.images.forEach((img, i) => { %>
-                        <% if(i === 0) { %> 
-                            <img src="<%= img.url %>" alt="" class="img-fluid">
-                        <% } %>
-                    <% }) %>
+                    <img src="<% if(campground.images.length) { %> <%= campground.images[0].url %><% } else { %>https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80<% } %> " alt="" class="img-fluid">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -26,3 +24,9 @@
         </div>
     <% } %>
 </div>
+
+<script>
+    const mapBoxToken = '<%- process.env.MAPBOX_TOKEN %>';
+    const campgroundsJSON = { features: <%- JSON.stringify(campgrounds) %> };
+</script>
+<script src="/scripts/clusterMap.js"></script>

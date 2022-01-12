@@ -1,0 +1,9 @@
+/* Mapbox Styles */
+
+#cluster-map {
+    height: 500px;
+}
+
+#campground-map {
+    height: 260px;
+}

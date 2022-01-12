@@ -32,7 +32,7 @@ mongoose.connect(dbUrl, {
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
-    console.log("Database connected on 3000");
+    console.log("Database connected");
 });
 
 const app = express();
