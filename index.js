@@ -8,7 +8,7 @@ const mongoose = require('mongoose'),
       geocodingClient = mbxGeocoding({ accessToken: mapBoxToken }),
       cities = require('./cities'),
       { descriptors, places } = require('./seedHelpers'),
-      Campground = require('../models/campground');
+      Campground = require('./models/campground');
 
 mongoose.connect('mongodb://localhost:27017/yelpCamp');
 
