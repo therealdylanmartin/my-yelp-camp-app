@@ -42,8 +42,8 @@ const seedDB = async () => {
             title: `${sample(descriptors)} ${sample(places)}`,
             images: [
                 { 
-                    url: `${campgroundImages.response[i].urls.full}&fit=crop&w=400&h=320`,
-                    filename: `${campgroundImages.response[i].urls.full}&fit=crop&w=400&h=320`.replace('https://images.unsplash.com/','')
+                    url: `${campgroundImages.response[i].urls.full}&fit=crop&w=800&h=640`,
+                    filename: `${campgroundImages.response[i].urls.full}&fit=crop&w=800&h=640`.replace('https://images.unsplash.com/','')
                 }
             ],
             description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, cumque? Ad, eaque modi, vitae est suscipit molestiae illo, perferendis nulla laboriosam adipisci neque alias nesciunt incidunt quidem aspernatur ipsa animi?',
@@ -62,7 +62,6 @@ let campgroundImages;
 
 getCampgroundImages()
     .then((images) => {
-        console.log(images.response[0].urls)
         return campgroundImages = images;
     })
     .then(() => {
