@@ -10,7 +10,15 @@ const mongoose = require('mongoose'),
       { descriptors, places } = require('./seedHelpers'),
       Campground = require('../models/campground');
 
-mongoose.connect('mongodb://localhost:27017/yelpCamp');
+let dbUrl = process.env.DB_URL;
+if(process.env.NODE_ENV !== 'production') {
+    dbUrl = 'mongodb://localhost:27017/yelpCamp';
+}
+
+mongoose.connect(dbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
