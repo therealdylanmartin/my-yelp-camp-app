@@ -10,8 +10,9 @@ const mongoose = require('mongoose'),
       { descriptors, places } = require('./seedHelpers'),
       Campground = require('../models/campground');
 
-let dbUrl = process.env.DB_URL;
-let authorId = '61ddd98a05c73c828589e640';
+let dbUrl = process.env.DB_URL,
+    authorId = '61ddd98a05c73c828589e640';
+    
 if(process.env.NODE_ENV !== 'production') {
     dbUrl = 'mongodb://localhost:27017/yelpCamp';
     authorId = '61db5068ea6f71b2af4ab686';
