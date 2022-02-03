@@ -43,7 +43,7 @@
                 <li class="list-group-item"><%= campground.location %></li>
                 <li class="list-group-item">$<%= campground.price %>/night</li>
             </ul>
-            <% console.log(currentUser, currentUser.id, campground.author, campground.author.equals(currentUser.id)) %>
+            <% console.log(currentUser, currentUser.id, campground.author) %>
             <div class="card-footer text-muted">
                 Submitted by <a href="#"><%= campground.author.username %></a>
             </div>
