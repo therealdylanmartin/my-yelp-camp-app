@@ -11,8 +11,10 @@ const mongoose = require('mongoose'),
       Campground = require('../models/campground');
 
 let dbUrl = process.env.DB_URL;
+let authorId = '61ddd98a05c73c828589e640';
 if(process.env.NODE_ENV !== 'production') {
     dbUrl = 'mongodb://localhost:27017/yelpCamp';
+    authorId = '61db5068ea6f71b2af4ab686';
 }
 
 mongoose.connect(dbUrl, {
@@ -45,7 +47,7 @@ const seedDB = async () => {
         const randomOf1000 = Math.floor(Math.random() * 1000);
         const price = Math.floor(Math.random() * 40);
         const campground = new Campground({
-            author: '61db5068ea6f71b2af4ab686',
+            author: authorId,
             location: `${cities[randomOf1000].city}, ${cities[randomOf1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
             images: [

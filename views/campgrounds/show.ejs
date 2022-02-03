@@ -43,6 +43,7 @@
                 <li class="list-group-item"><%= campground.location %></li>
                 <li class="list-group-item">$<%= campground.price %>/night</li>
             </ul>
+            <% console.log(currentUser, currentUser.id, campground.author, campground.author.equals(currentUser.id)) %>
             <% if(currentUser && campground.author.equals(currentUser.id)) { %>
                 <div class="card-body">
                     <a href="/campgrounds/<%= campground.id %>/edit" class="card-link btn btn-info">Edit</a>
